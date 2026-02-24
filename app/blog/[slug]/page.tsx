@@ -4,13 +4,26 @@ type Params = {
   };
 };
 
+export async function generateStaticParams() {
+  return [
+    { slug: "hcm" },
+    { slug: "hanoi" },
+    { slug: "nghean" },
+  ];
+}
+
 export async function generateMetadata({ params }: Params) {
   return { title: `Post: ${params.slug}` };
 }
 
 export default function Page({ params }: Params) {
-  return <><h1>Slug: {params.slug}</h1><p>TranNghia</p>
-  <p>Welcome to HCM</p>
-  <p>Welcome HANOi</p>
-  <p>Welcome NgheAn</p></>;
+  return (
+    <>
+      <h1>Slug: {params.slug}</h1>
+      <p>TranNghia</p>
+      <p>Welcome to HCM</p>
+      <p>Welcome HANOi</p>
+      <p>Welcome NgheAn</p>
+    </>
+  );
 }
